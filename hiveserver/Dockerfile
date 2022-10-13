@@ -11,7 +11,6 @@ RUN curl -fSL https://dlcdn.apache.org/hive/hive-${HIVE_VER}/apache-hive-${HIVE_
 RUN tar -xvf /apache-hive-$HIVE_VER.tar.gz -C /opt/ && rm /apache-hive-$HIVE_VER.tar.gz
 RUN ln -s /opt/apache-hive-${HIVE_VER}-bin /opt/hive
 #RUN rename 's/properties.template/properties/' /opt/hive/conf/*.properties.template
-
 ENV HIVE_HOME=/opt/hive
 
 RUN curl -fSL https://jdbc.postgresql.org/download/postgresql-$POSTGRESQL_VER.jar -o /opt/hive/lib/postgresql-$POSTGRESQL_VER.jar
@@ -24,4 +23,4 @@ RUN chmod a+x /run.sh
 
 EXPOSE 10000 10002
 
-CMD ["/run.sh"]	
+CMD ["/run.sh"]
